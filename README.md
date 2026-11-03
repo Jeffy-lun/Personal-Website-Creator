@@ -66,6 +66,13 @@ pyftsubset /path/to/NotoSerifSC-VF.ttf \
 - 页面支持 `prefers-reduced-motion`；所有批注与正文在无动画时也可见。
 - 颜色对比度按 WCAG AA 检查；功能文字不小于 11px。
 
+## 资产来源
+
+- `assets/img/paper-grain.webp`：程序生成的 180×180 纸张颗粒/纤维纹理（Python + Pillow，固定种子 7），缩到 140×140 后编码为 WebP；不是 AI 生成。
+- `assets/img/favicon.svg`：手写 SVG。
+- `assets/fonts/*.woff2`：从 Noto Serif SC、LXGW WenKai、IBM Plex Mono 的 OFL 源文件子集化；源文件不随仓库分发。
+- `docs/review/*.png`：真实浏览器截图；`before-098e951.png` 是改前仓库页面，其余是改后站点在 1440 / 390 下的截图。
+
 ## 设计记录
 
 - `PRODUCT.md`：产品事实、假设与不能编造的内容边界。
