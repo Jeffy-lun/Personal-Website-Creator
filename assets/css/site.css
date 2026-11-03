@@ -41,6 +41,7 @@
   --runhead-h: 60px;
   --page-max: 1300px;
   --pad: clamp(20px, 4.2vw, 64px);
+  --frame: max(var(--pad), calc((100vw - var(--page-max)) / 2));
   --bind: clamp(64px, 7vw, 104px);
   --ease-step: steps(2, end);
 }
@@ -217,7 +218,7 @@ p {
   align-items: center;
   gap: clamp(14px, 3vw, 40px);
   height: var(--runhead-h);
-  padding: 0 var(--pad);
+  padding: 0 var(--frame);
   border-bottom: 1px solid var(--rule);
   background: var(--paper);
 }
@@ -313,7 +314,7 @@ p {
   position: fixed;
   z-index: 35;
   top: 50%;
-  right: max(14px, calc((100vw - var(--page-max)) / 2 - 36px));
+  right: var(--rail-right, max(14px, calc((100vw - var(--page-max)) / 2 - 36px)));
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -369,8 +370,7 @@ p {
 .sheet {
   position: relative;
   width: min(calc(100% - 2 * var(--pad) - 34px), var(--page-max));
-  margin-left: auto;
-  margin-right: calc(var(--pad) + 34px);
+  margin: 0 auto;
 }
 
 .sheet__rule {
@@ -1807,6 +1807,38 @@ html[data-view="clean"] .stamp--clean {
   .colophon__foot {
     flex-wrap: wrap;
     gap: 10px 18px;
+  }
+}
+
+@media (max-width: 900px) and (max-height: 680px) {
+  .hero {
+    padding-top: 18px;
+    padding-bottom: 16px;
+  }
+  .hero__name {
+    font-size: clamp(48px, 11vh, 72px);
+  }
+  .hero__latin {
+    font-size: 11px;
+  }
+  .hero__statement {
+    margin-top: 24px;
+  }
+  .statement {
+    font-size: clamp(40px, 8.6vh, 64px);
+  }
+  .hero__note {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  .hero__sub {
+    margin-top: 18px;
+    font-size: 14px;
+  }
+  .stamp--draft,
+  .stamp--clean {
+    margin-top: 10px;
+    font-size: 15px;
   }
 }
 

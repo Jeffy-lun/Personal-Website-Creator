@@ -224,6 +224,10 @@
       {
         "name": "notes-stack",
         "value": "1180px"
+      },
+      {
+        "name": "short-height",
+        "value": "680px"
       }
     ]
   },

@@ -217,7 +217,7 @@ A paper-and-ink palette with two working inks: red for corrections and the activ
 - **Status words** (WenKai, 14px): 进行中 / 继续 / 搁置 / 待定, 校样中 / 已刊 / 待写.
 - **Stamp** (600, 19px, 1, 0.3em): 未定稿 / 清样; **Seal** (600, 64px, 1) for 阅.
 
-**Responsive and component sizes.** The role tokens above are the desktop spine. The build also uses these documented steps: 13px keywords and hero count; 14px status words; 15px descriptions, mobile annotation, colophon note and mobile contact secondary; 17px mobile body and note body; 19px mobile now-row titles; 21–28px note titles; 23–32px draft titles; 26–42px contact line; 30–34px signature; 30–44px mobile contact link; 50px mobile seal; 54–86px tablet statement; 62–96px mobile display; 80–150px tablet display; 32px mobile headline. These are sizes, not new voices.
+**Responsive and component sizes.** The role tokens above are the desktop spine. The build also uses these documented steps: 13px keywords and hero count; 14px status words; 15px descriptions, mobile annotation, colophon note, mobile contact secondary, short-height note/sub and stamp; 17px mobile body and note body; 19px mobile now-row titles; 21–28px note titles; 23–32px draft titles; 26–42px contact line; 30–34px signature; 30–44px mobile contact link; 50px mobile seal; 54–86px tablet statement; 62–96px mobile display; 80–150px tablet display; 32px mobile headline; 48–72px short-height name; 40–64px short-height statement. These are sizes, not new voices.
 
 ### Named Rules
 **The Two Voices Rule.** Song sets the printed statement; Kai is only for the margin, inserts, and the signature. Body copy is never set in Kai.
@@ -226,7 +226,7 @@ A paper-and-ink palette with two working inks: red for corrections and the activ
 
 ## Layout
 
-The page is one sheet, not a stack of sections. Its width is `min(100% − 2 × pad − 34px, 1300px)`, with `pad: clamp(20px, 4.2vw, 64px)`. The 34px is the fore-edge reserved for the tab index; the binding margin sits inside the sheet at `clamp(64px, 7vw, 104px)`. The page is deliberately asymmetric: a narrower binding edge on the left, a wider fore-edge on the right.
+The page is one sheet, not a stack of sections. Its width is `min(100% − 2 × pad − 34px, 1300px)`, with `pad: clamp(20px, 4.2vw, 64px)`, and it is centered in the viewport. The 34px reservation keeps the sheet off the viewport edge; the running head is inset to the sheet's left, and the fixed tab rail sits 10px outside its right edge. JS publishes both positions from the sheet's rect so the header, sheet and rail share one frame at 16:9, 4:3 and 9:16. Inside the sheet, the binding rail sits at `clamp(64px, 7vw, 104px)`; the proof-sheet asymmetry lives inside the sheet, not in the page margins.
 
 The chapter grid is three columns: **binding rail** (`clamp(64px, 7vw, 104px)`) for folios and vertical labels, **title column** (`clamp(120px, 15vw, 188px)`) for the section title, and **body** (`1fr`). Column gap is `clamp(20px, 3vw, 40px)`. Inside the body, an annotated passage is a two-column proof block: prose `1fr`, margin notes `minmax(180px, 220px)`, gap 32px. Below 1180px the notes stack under the prose and the chapter note becomes static; below 900px the title column collapses and the whole page becomes a single column.
 
@@ -235,10 +235,11 @@ The hero is a three-column grid: binding metadata, the statement, and the vertic
 The vertical rhythm is one scale: section padding `clamp(64px, 9vh, 108px)`, heading margin 12px, lede margin 40px, prose paragraphs 1.4em, note gaps 20px. More space sits above a heading than below it. Headings are sticky on desktop, static on mobile. The prose measure is capped at 38em; at 1440 it lands at about 620px, which is roughly 65–75ch in the Latin sense and 32–34 Chinese characters per line.
 
 Responsive changes:
-- **>1180px:** margin notes live in the right column; the tab index is a fixed vertical rail in the fore-edge.
+- **>1180px:** margin notes live in the right column; the tab index is a fixed vertical rail 10px outside the sheet's right edge, with the running head inset to the sheet's left.
 - **≤1180px:** notes stack under the prose; chapter notes become static; the meta line hides in the running head.
 - **≤980px:** the title column narrows to 110–150px; the sheet keeps its binding rail.
 - **≤900px:** the hero stacks, the name becomes horizontal, the tab index becomes a sticky horizontal strip, the reading line becomes a 2px bar at the very top of the viewport, and the sheet is centered with 20px margins.
+- **≤900px and ≤680px height:** the hero compresses to close its first viewport: name 48–72px, statement 40–64px, note/sub 14px, stamp 15px, and the top/bottom margins tighten. This is the 4:3 800×600 and 9:16 360×640 case; the foot stays visible.
 - **≤560px:** the running-head subtitle hides and the proof toggle tightens; the annotation count stays visible.
 
 There is no dark mode: the use scene is a paper proof under a desk lamp, and inverting it would break the material. Print is supported: chrome, tabs, crop marks, the reading line, and stamps hide; the name goes horizontal; the page prints in the documented print black on print white at 16mm margins, with 1px print-rule section lines; correction marks keep their red ink.
@@ -312,7 +313,7 @@ Square is the default. Borders are 1px; rules are 1px; the sheet has no radius. 
 ## Do's and Don'ts
 
 ### Do
-- **Do** keep the sheet asymmetric: binding margin left, fore-edge index right, 34px reserved for tabs.
+- **Do** keep the proof-sheet asymmetry inside the sheet: binding rail left, tab index at the sheet's right; the sheet itself stays centered and the running head shares its left edge.
 - **Do** keep functional text at 11px or larger and body at 17–19px with 1.88–1.95 line height.
 - **Do** keep the prose at 30–34 Chinese characters per line (about 65–75ch) and cap it at 38em.
 - **Do** use red for corrections and the active state; use blue only for the clean/paused state.
