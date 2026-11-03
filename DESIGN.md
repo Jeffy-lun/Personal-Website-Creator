@@ -148,6 +148,12 @@ components:
     typography: "{typography.body}"
     rounded: "{rounded.none}"
     padding: "20px 0 0"
+  plate:
+    backgroundColor: "{colors.proof-paper}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body}"
+    rounded: "{rounded.none}"
+    padding: "10px"
 ---
 
 # Design System: 孟祥博 · 个人校样
@@ -232,6 +238,8 @@ The chapter grid is three columns: **binding rail** (`clamp(64px, 7vw, 104px)`) 
 
 The hero is a three-column grid: binding metadata, the statement, and the vertical name. It is `min-height: calc(100svh − 60px)`, with the name set vertically at the right and the statement centered on the left. The stamp is attached to the name's lower-left, not floated in the middle. The first viewport ends on a proof foot: a scroll cue, the annotation count, and the folio.
 
+The 图版 section is a vertical sequence of plates, not a grid of cards: the first plate is 640px wide, the second 480px and offset right, the third a dashed 640px placeholder. A plate is a 1px frame with 10px of paper around the image; its caption sets the 图版 number in mono, the title in Song, the status in Kai, and the seed/model line in mono beneath. The margin note sits in the 220px column beside the image above 1180px and stacks under it below. The section is 56px between plates. The hero test print is a 172px plate at the lower right of the first viewport; it appears only above 900px width and 861px height, and disappears in 清样 because it is an annotation.
+
 The vertical rhythm is one scale: section padding `clamp(64px, 9vh, 108px)`, heading margin 12px, lede margin 40px, prose paragraphs 1.4em, note gaps 20px. More space sits above a heading than below it. Headings are sticky on desktop, static on mobile. The prose measure is capped at 38em; at 1440 it lands at about 620px, which is roughly 65–75ch in the Latin sense and 32–34 Chinese characters per line.
 
 Responsive changes:
@@ -301,6 +309,13 @@ Square is the default. Borders are 1px; rules are 1px; the sheet has no radius. 
 - **Placement:** after the colophon grid, before the footer; always visible, including in 清样; rows stack below 560px.
 - **Purpose:** closes the page by showing its three voices in the same sentence.
 
+### Image Plates
+- **Frame:** a 1px ink rule with 10px of paper around the image; no shadow, no radius, no card. The image is 4:5 and object-fit cover (the generated files are already 4:5).
+- **Caption:** a three-column line above the seed/model line: 图版 number in 11px mono red, title in 24–32px Song 600, status in 14px Kai red (blue for 待生成); the meta line is 11px mono, "生成图像 · 2026 · seed 214 · Qwen-Image".
+- **Note:** the 16px Kai note sits in the right 220px margin above 1180px, with a 22px 问/改 tag; it stacks beneath the image below that.
+- **Sequence:** plate 01 at max 640px, plate 02 at max 480px and offset right, plate 03 as a dashed empty 640px placeholder with the next-copy. Never equal thumbnails.
+- **Hero test print:** a 172px version of plate 01 pinned at the lower right of the first viewport, rotated 1.2deg, with the caption 试印 / 潮汐标本 / 214. It is an annotation, shown only above 900px width and 861px height.
+
 ### Reading Line
 - **Desktop:** a 1px fixed red line at the binding edge, beginning under the 60px running head and growing with scroll progress. A faint 1px structural rule marks the same x-position in the sheet. It is a reading instrument, not a border.
 - **Mobile:** a 2px red bar pinned to the very top of the viewport; the progress fill is the only red there.
@@ -320,6 +335,8 @@ Square is the default. Borders are 1px; rules are 1px; the sheet has no radius. 
 - **Do** preserve the 校样/清样 toggle, its `localStorage` memory, and the no-JavaScript marked fallback.
 - **Do** use steps(2, end) for state changes and one timed landing for the stamp.
 - **Do** keep the stamp to one per view and the crop marks to the four corners.
+- **Do** keep the plates on the sheet: 1px frame, 10px paper margin, caption with 图版 number, title, status, seed and model; different widths for plate 01 and 02; plate 03 left empty.
+- **Do** keep the hero test print only above 900px width and 861px height, and hide it in 清样.
 
 ### Don't
 - **Don't** wrap sections, rows, or notes in cards, rounded rectangles, or soft-shadow panels.
@@ -329,3 +346,5 @@ Square is the default. Borders are 1px; rules are 1px; the sheet has no radius. 
 - **Don't** add scroll-reveal animations, hover lifts, or more than one accent on a single element.
 - **Don't** hide the annotations behind JavaScript; the marked proof is the default and must survive without JS.
 - **Don't** turn the fore-edge index into a generic sidebar or move it into the content column.
+- **Don't** turn the plates into equal cards, rounded thumbnails or circle-cropped avatars; don't remove the seed/model line.
+- **Don't** let the hero test print appear on phones or short viewports; it would collide with the foot.
