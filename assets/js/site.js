@@ -67,6 +67,10 @@
     if (!sheet) return;
     var x = rule ? rule.getBoundingClientRect().left : sheet.getBoundingClientRect().left;
     sheet.style.setProperty("--rail-x", Math.round(x) + "px");
+    var sheetRect = sheet.getBoundingClientRect();
+    root.style.setProperty("--frame", Math.round(sheetRect.left) + "px");
+    var right = Math.round(window.innerWidth - sheetRect.right - 47);
+    root.style.setProperty("--rail-right", Math.max(14, right) + "px");
   }
 
   /* active section tab */
