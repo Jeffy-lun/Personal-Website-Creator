@@ -1,6 +1,6 @@
-# 孟祥博 · 个人校样
+# 孟祥博 · 生成校样
 
-一个单页个人网站。它把自己当作一份还在修改中的稿子：宋体负责正经，楷体负责心虚，红笔负责说真话。
+一个单页个人网站。它把身份写成一位 **AI 图像创作者**：纸面校样、红笔批注、模型与提示词的痕迹，以及两张用 ComfyUI 生成的图版。宋体负责正经，楷体负责心虚，红笔负责说真话。
 
 - 线上形态：一页，中文优先，手机和桌面都能读。
 - 交互：右上角「看清样 / 看校样」切换批注；批注会记住你的选择。
@@ -14,30 +14,33 @@
 python3 -m http.server 8000
 ```
 
-然后打开 <http://localhost:8000>。直接双击 `index.html` 也能看，但用本地服务器可以保证字体加载一致。
+然后打开 <http://localhost:8000>。直接双击 `index.html` 也能看，但用本地服务器可以保证字体和图片加载一致。
 
 ## 文件
 
 ```
-index.html              页面结构、全部文案
-assets/css/site.css     版式、颜色、校样标记、响应式
-assets/js/site.js       清样/校样切换、阅读进度、目录高亮
-assets/fonts/           子集化后的字体（WOFF2）
-assets/img/             纸张颗粒、favicon
+index.html                      页面结构、全部文案
+assets/css/site.css             版式、颜色、校样标记、图版、响应式
+assets/js/site.js               清样/校样切换、阅读进度、目录高亮
+assets/fonts/                   子集化后的字体（WOFF2）
+assets/img/plates/              两张 ComfyUI 生成图版 + 生成记录
+assets/img/                     纸张颗粒、favicon
 ```
 
-## 上线前请替换
+## 关于内容
 
-页面里的自我介绍、近况、稿件和批注是**示例文案**，用来把设计撑起来；它们不是已核实的事实。发布前请把下列内容改成你自己的：
+页面里的自我介绍、近况、图版说明和批注是**按你的要求写的虚构内容**，把主人公安置成一位 AI 图像创作者；它们不是已核实的事实陈述。姓名「孟祥博」和 GitHub `Jeffy-lun` 是真实账号；两张图版是这次用你的 ComfyUI 生成的。想把虚构身份换成真实经历，直接改 `index.html` 和 `assets/img/plates/README.md` 即可。
 
-1. `index.html` 中 `## 摘要` 一段的姓名、身份与句子。
-2. `## 近况` 的四条内容与日期。
-3. `## 稿件` 的三行；「本页」目前指向本仓库，可以换成你的作品链接。
-4. `## 批注` 的三则短文；如果不想公开，整节可以删掉，同时删掉目录里的 04。
-5. 联系区只放了 GitHub；需要邮箱的话，在 `## 来信` 里加一个 `mailto:` 链接。
-6. 页脚的「版次」「写于」「更新于」日期。
+## 图像来源
 
-改文案时尽量保持一行 30–38 个汉字；如果新增了字体子集里没有的汉字，浏览器会回退到系统字体。想让新字也使用站内字体，重新子集化即可：
+- `assets/img/plates/tidal-specimen.webp` — Qwen-Image 2.1 via ComfyUI，1024×1280，seed 214；提示词与负向提示词在 `assets/img/plates/README.md`。
+- `assets/img/plates/invisible-portrait.webp` — 同模型，seed 908；提示词在同一个文件。
+- 两张图在生成后转为 WebP；源 PNG 不随仓库分发，按记录里的提示词和 seed 可以复现。
+- 工作流：`/root/comfy/workflows/qwen-image-t2i.json`（Qwen-Image 2.1，20 steps，cfg 2.5）。
+
+## 字体
+
+思源宋体（Noto Serif SC）、霞鹜文楷（LXGW WenKai）、IBM Plex Mono，均为 SIL Open Font License。字体按当前页面文案子集化；新增汉字时重新子集化：
 
 ```bash
 pyftsubset /path/to/NotoSerifSC-VF.ttf \
@@ -46,7 +49,7 @@ pyftsubset /path/to/NotoSerifSC-VF.ttf \
   --layout-features='kern,liga,clig,calt,locl,palt' --no-hinting --desubroutinize
 ```
 
-楷体与等宽字体同理。字体均为 SIL Open Font License：思源宋体（Noto Serif SC）、霞鹜文楷（LXGW WenKai）、IBM Plex Mono。
+楷体与等宽字体同理。
 
 ## 发布
 
@@ -61,22 +64,14 @@ pyftsubset /path/to/NotoSerifSC-VF.ttf \
 ## 可访问性
 
 - 语义化标题层级与 `main` / `footer` 地标；跳到正文的链接。
-- 切换按钮支持键盘，状态通过 `aria-pressed` 和读屏提示播报。
-- 关闭 JavaScript 时显示完整校样，切换按钮自动隐藏。
-- 页面支持 `prefers-reduced-motion`；所有批注与正文在无动画时也可见。
+- 图版有描述性 alt text；切换按钮支持键盘，状态通过 `aria-pressed` 和读屏提示播报。
+- 关闭 JavaScript 时显示完整校样，切换按钮自动隐藏；`prefers-reduced-motion` 已处理。
 - 颜色对比度按 WCAG AA 检查；功能文字不小于 11px。
-
-## 资产来源
-
-- `assets/img/paper-grain.webp`：程序生成的 180×180 纸张颗粒/纤维纹理（Python + Pillow，固定种子 7），缩到 140×140 后编码为 WebP；不是 AI 生成。
-- `assets/img/favicon.svg`：手写 SVG。
-- `assets/fonts/*.woff2`：从 Noto Serif SC、LXGW WenKai、IBM Plex Mono 的 OFL 源文件子集化；源文件不随仓库分发。
-- `docs/review/*.png`：真实浏览器截图；`before-098e951.png` 是改前仓库页面，其余是改后站点在 1440 / 390 下的截图。
 
 ## 设计记录
 
-- `PRODUCT.md`：产品事实、假设与不能编造的内容边界。
-- `DESIGN.md`：颜色、字体、网格、校样标记与动效的长期规则。
+- `PRODUCT.md`：产品事实、虚构内容的边界与素材来源。
+- `DESIGN.md`：颜色、字体、网格、图版、校样标记与动效的长期规则。
 - `.impeccable/`：本次方向选择与页面 brief（开发记录，不参与页面运行）。
 
-页面是一份校样，不是定稿。欢迎在 [Issues](https://github.com/Jeffy-lun/Personal-Website-Creator/issues) 里批注。
+页面是一份生成校样，不是定稿。欢迎在 [Issues](https://github.com/Jeffy-lun/Personal-Website-Creator/issues) 里批注。

@@ -8,55 +8,55 @@ web
 
 ## Stack
 
-delegated: static HTML/CSS/JS with no build step. The repository is empty apart from a one-line README, the deliverable is a single public personal site, and a static site is the shortest path from review to any host. The owner did not state a stack; this is an explicit assumption, not a confirmed choice.
+delegated: static HTML/CSS/JS with no build step. The site is one public page; a static site is the shortest path from review to any host. The owner did not state a stack; this is an explicit assumption.
 
 ## Users
 
-- **Visitors** who meet 孟祥博 (GitHub: `Jeffy-lun`) through a shared link, a message, or search: peers, friends, collaborators, and people deciding whether to start a conversation. They give the page seconds to answer *who is this person, what do they care about, is there anything here worth staying for, and how do I reach them*.
-- **The owner**, who will replace the authored sample copy with real biography, projects, and contact details without touching the layout.
+- **Visitors** who meet 孟祥博 (GitHub: `Jeffy-lun`) through a link: peers, collaborators, people curious about AI image-making. They give the page seconds to answer *who is this person, what do they make, is the work worth staying for, and how do I reach them*.
+- **The owner**, who edits the page and its plates; the copy is a fictional AI-artist persona the owner explicitly asked for, not a factual biography.
 
 ## Product Purpose
 
-A personal website that carries a point of view instead of presenting a template portfolio. Success means a visitor remembers a person and an idea, scrolls past the first screen, and leaves with a way to make contact; the owner can point to it as a finished piece of self-representation.
+A personal website that presents an AI art practice as a working proof rather than a gallery of finished products. Success means the visitor remembers an image and a voice, scrolls from the statement into the plates, and leaves with a way to make contact.
 
 ## Positioning
 
-A one-person publication rather than a résumé: the site is about how this person thinks and what they are making now, not a list of employers, client logos, or metric badges. Its mechanism is an authored self-portrait that treats the owner as a work in progress and lets the design itself — not stock portfolio sections — carry the personality.
+A one-person AI art publication set as an editorial proof: generated plates are pinned onto the same warm sheet as the prompts,廢稿 and corrections that produced them. The model supplies accidents; the artist supplies the decisions. It is not a generic AI portfolio with a grid of equal thumbnails.
 
 ## Operating Context
 
-- One public page, read on a phone first and a desktop second, with no login, no data collection, and no third-party services.
-- The owner edits plain HTML/CSS/JS in the repository and can host it on any static host, including GitHub Pages.
-- Content is Chinese-first; English appears as typographic texture and navigation, not as a translation of the body.
+- One static page, Chinese-first, read on phone and desktop; no login, no data collection, no third-party runtime.
+- Two artwork plates generated with the owner's ComfyUI (Qwen-Image 2.1), stored as WebP under `assets/img/plates/`.
+- The owner can edit the HTML/CSS directly; the copy is explicitly fictional and replaceable.
 
 ## Capabilities and Constraints
 
-- One page with: identity, a short point of view, current work, selected notes, and contact.
-- **No verified biography, profession, employer, project history, client, testimonial, email address, or photography exists.** The only confirmed facts are the display name 孟祥博, the GitHub account `Jeffy-lun`, and an otherwise empty repository named `Personal-Website-Creator`.
-- Authored sample sentences are design material, not claims: they must stay generic enough to be true of a person who makes things, and the repository must document exactly what the owner should replace. No invented credentials, employers, metrics, awards, or client names.
-- No build step, no external runtime dependency, no tracking. Fonts ship as subset files beside the page.
-- Must stay legible and complete with JavaScript disabled; motion must respect `prefers-reduced-motion`.
+- One page: identity, an abstract, current work, a plates section with two generated artworks and one reserved next plate, three notes, and contact.
+- **The text is fictional by the owner's instruction**; it portrays the owner as an AI image-maker. It is not a verified biography and must not be read as factual claims about employers, clients, awards, or metrics.
+- Real assets: the name 孟祥博, GitHub `Jeffy-lun`, and the two generated plates with their prompts and seeds.
+- No build step, no external services, no tracking; fonts and images ship with the page.
+- Must stay legible and complete with JavaScript disabled; motion respects `prefers-reduced-motion`.
 
 ## Brand Commitments
 
-- The owner asked for a personal site with **personality** (具有个性). No colours, typography, references, or visual style were pinned; the visual world is the design's decision.
-- Chinese-first voice, first person, plain and a little self-aware; no corporate or influencer register.
-- Confirmed identity: 孟祥博 / Jeffy / `Jeffy-lun`.
+- The owner asked for an AI art creation story, fictional text, and permission to use ComfyUI images; the visual style may change if appropriate.
+- The build keeps the established proof-sheet world: warm paper, printed Song, handwritten Kai, correction red and pencil blue, a 校样/清样 toggle.
+- Chinese-first, first person, plain and self-aware; no corporate or influencer register.
 
 ## Evidence on Hand
 
-- Display name 孟祥博 and GitHub login `Jeffy-lun`.
-- The repository `Personal-Website-Creator` (empty except README).
-- No avatar, photographs, written biography, project write-ups, or contact address. These absences are explicit and must not be filled with fabricated facts.
+- Name 孟祥博 and GitHub login `Jeffy-lun`.
+- Two generated plates with recorded prompts, workflow, size and seeds (see `assets/img/plates/README.md`).
+- No verified biography, employer, client, testimonial, or email; the copy is the requested fictional persona.
 
 ## Product Principles
 
-1. Person before portfolio: taste and point of view are the evidence, not credentials.
-2. Author every visible thing; never fake a fact.
-3. One idea carried all the way; no template furniture, no section that exists because portfolios have it.
+1. Art before portfolio: the plates and the working process are the evidence, not credential badges.
+2. Keep the model visible: prompts, seeds,廢稿 and corrections belong on the same sheet as the image.
+3. One idea carried all the way; no generic AI gallery furniture.
 4. The design must be worth remembering after one viewport, without blocking the reading.
-5. Every sentence the owner may want to change is easy to find and replace.
+5. Every sentence and image the owner may want to change is easy to find and replace.
 
 ## Accessibility & Inclusion
 
-Standard web practice, not a confirmed certification: semantic landmarks, keyboard-reachable controls, visible focus, readable contrast, `prefers-reduced-motion`, and content that survives without JavaScript. No product-specific accessibility requirement was established.
+Standard web practice: semantic landmarks, keyboard-reachable controls, visible focus, readable contrast, `prefers-reduced-motion`, descriptive alt text on every plate, and content that survives without JavaScript. No product-specific certification was established.
