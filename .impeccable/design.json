@@ -275,6 +275,22 @@
       "description": "The single large red call to action; a 1px red rule under the words, ink on hover.",
       "html": "<a class=\"ds-contact\" href=\"#\">来 GitHub 找我<span aria-hidden=\"true\">↗</span></a>",
       "css": ".ds-contact{display:inline-flex;align-items:baseline;gap:14px;padding-bottom:6px;border-bottom:1px solid #b02a1e;color:#b02a1e;font-family:\"Noto Serif SC\",\"Songti SC\",serif;font-size:clamp(34px,5vw,64px);font-weight:600;line-height:1.15;letter-spacing:.02em;text-decoration:none;transition:color .12s steps(2,end),border-color .12s steps(2,end)}.ds-contact:hover{color:#17140f;border-color:#17140f}.ds-contact span{font-size:.55em;line-height:1}"
+    },
+    {
+      "name": "Proof Key",
+      "kind": "custom",
+      "refersTo": "proof-key",
+      "description": "A small printed legend naming the proof marks; sits under the section note in the margin and hides in clean mode.",
+      "html": "<aside class=\"ds-proof-key\"><p class=\"ds-proof-key__title\"><span class=\"ds-proof-key__tag\">校</span>校对符号</p><ul class=\"ds-proof-key__list\"><li><span class=\"ds-proof-key__tag\">改</span><span>换一个说法</span></li><li><span class=\"ds-proof-key__tag\">问</span><span>这里还没想清楚</span></li><li><span class=\"ds-proof-key__tag\">删</span><span>被划掉的旧话</span></li><li><span class=\"ds-proof-key__tag\">补</span><span>后来加上的</span></li></ul><p class=\"ds-proof-key__foot\">红笔是校对，蓝笔是搁置。</p></aside>",
+      "css": ".ds-proof-key{width:232px;padding-top:12px;border-top:1px solid rgba(176,42,30,.32);color:#b02a1e;font-family:\"WenKai\",\"Noto Serif SC\",\"Kaiti SC\",cursive;font-size:14px;line-height:1.6}.ds-proof-key__title{display:flex;align-items:center;gap:8px;margin:0 0 8px;color:#17140f;font-family:\"Noto Serif SC\",\"Songti SC\",serif;font-size:14px;font-weight:600;letter-spacing:.06em}.ds-proof-key__list{list-style:none;margin:0;padding:0}.ds-proof-key__list li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:9px;padding:6px 0;border-top:1px dotted rgba(176,42,30,.32)}.ds-proof-key__list li:first-child{border-top:0}.ds-proof-key__tag{display:inline-grid;place-items:center;width:22px;height:22px;border:1px solid currentColor;font-family:\"Noto Serif SC\",\"Songti SC\",serif;font-size:12px;line-height:1;transform:rotate(-2deg)}.ds-proof-key__foot{margin:10px 0 0;padding-top:10px;border-top:1px solid rgba(176,42,30,.32);font-family:\"WenKai\",\"Kaiti SC\",cursive;font-size:14px}"
+    },
+    {
+      "name": "Type Specimen",
+      "kind": "custom",
+      "refersTo": "type-specimen",
+      "description": "Three rows of the same sentence in Song, Kai and mono; closes the page by showing its three voices.",
+      "html": "<div class=\"ds-specimen\"><p class=\"ds-specimen__title\">本页用字</p><div class=\"ds-specimen__row\"><span class=\"ds-specimen__label\">宋体 / 正经</span><span class=\"ds-specimen__song\">我还在改。</span></div><div class=\"ds-specimen__row\"><span class=\"ds-specimen__label\">楷体 / 心虚</span><span class=\"ds-specimen__kai\">我还在改。</span></div><div class=\"ds-specimen__row\"><span class=\"ds-specimen__label\">等宽 / 记账</span><span class=\"ds-specimen__mono\">PROOF 001 · 2026.11</span></div></div>",
+      "css": ".ds-specimen{max-width:100%;padding-top:20px;border-top:1px solid rgba(23,20,15,.19)}.ds-specimen__title{margin:0 0 8px;color:#b02a1e;font-family:\"IBM Plex Mono\",\"Noto Serif SC\",monospace;font-size:11px;letter-spacing:.16em}.ds-specimen__row{display:grid;grid-template-columns:140px minmax(0,1fr);gap:20px;align-items:baseline;padding:10px 0;border-top:1px dotted rgba(23,20,15,.1)}.ds-specimen__label{color:#6b6254;font-family:\"IBM Plex Mono\",\"Noto Serif SC\",monospace;font-size:11px;letter-spacing:.06em}.ds-specimen__song{color:#17140f;font-family:\"Noto Serif SC\",\"Songti SC\",serif;font-size:28px;font-weight:600;line-height:1.2;letter-spacing:.02em}.ds-specimen__kai{display:inline-block;color:#b02a1e;font-family:\"WenKai\",\"Noto Serif SC\",\"Kaiti SC\",cursive;font-size:28px;line-height:1.2;transform:rotate(-1deg)}.ds-specimen__mono{color:#17140f;font-family:\"IBM Plex Mono\",\"Noto Serif SC\",monospace;font-size:13px;letter-spacing:.12em}"
     }
   ],
   "narrative": {

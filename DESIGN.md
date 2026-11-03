@@ -135,6 +135,19 @@ components:
     typography: "{typography.contact}"
     rounded: "{rounded.none}"
     padding: "0 0 6px"
+  proof-key:
+    backgroundColor: "{colors.proof-paper}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body}"
+    rounded: "{rounded.none}"
+    padding: "12px 0 0"
+    width: "232px"
+  type-specimen:
+    backgroundColor: "{colors.proof-paper}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body}"
+    rounded: "{rounded.none}"
+    padding: "20px 0 0"
 ---
 
 # Design System: 孟祥博 · 个人校样
@@ -228,7 +241,7 @@ Responsive changes:
 - **≤900px:** the hero stacks, the name becomes horizontal, the tab index becomes a sticky horizontal strip, the reading line becomes a 2px bar at the very top of the viewport, and the sheet is centered with 20px margins.
 - **≤560px:** the running-head subtitle hides and the proof toggle tightens; the annotation count stays visible.
 
-There is no dark mode: the use scene is a paper proof under a desk lamp, and inverting it would break the material. Print is supported: chrome, tabs, crop marks, the reading line, and stamps hide; the name goes horizontal; the page prints in the documented print black on print white at 16mm margins, with 1px print-rule section lines.
+There is no dark mode: the use scene is a paper proof under a desk lamp, and inverting it would break the material. Print is supported: chrome, tabs, crop marks, the reading line, and stamps hide; the name goes horizontal; the page prints in the documented print black on print white at 16mm margins, with 1px print-rule section lines; correction marks keep their red ink.
 
 ## Elevation & Depth
 
@@ -259,7 +272,7 @@ Square is the default. Borders are 1px; rules are 1px; the sheet has no radius. 
 
 ### Margin Notes
 - **Shape:** a 220px column, 16px WenKai in correction red, 1px red-soft left rule, 18px left padding.
-- **Note tag:** a 22px square, 1px currentColor border, serif 12px, rotated −2deg; tags are 改 and 问.
+- **Note tag:** a 22px square, 1px currentColor border, serif 12px, rotated −2deg; the margin notes use 改 and 问; the proof key also uses 删 and 补.
 - **Behavior:** a hairline leader connects the hero note to the circled character. Notes sit beside the prose above 1180px and stack under it below; they are hidden in 清样 mode.
 
 ### Rubber Stamps
@@ -276,6 +289,16 @@ Square is the default. Borders are 1px; rules are 1px; the sheet has no radius. 
 ### Contact Link
 - **Style:** 34–64px serif 600 in correction red (30–44px on phones), 1px red bottom rule, a small ↗ set at 0.55em.
 - **Hover:** text and rule go to plain ink; the arrow steps 4px up-right. This is the only large action on the page.
+
+### Proof Key
+- **Shape:** a 232px margin slip under the section note, 1px red-soft top rule, 14px serif title "校对符号" with a 22px 校 tag, four rows (改 / 问 / 删 / 补) with 14px WenKai meanings, and a 14px WenKai foot "红笔是校对，蓝笔是搁置。"
+- **Placement:** absolute at the right margin on desktop; static after the chapter note below 1180px; hidden in 清样.
+- **Purpose:** names the marks the page uses, so the atmosphere is legible instead of decorative.
+
+### Type Specimen
+- **Shape:** in the colophon, a 1px-ruled three-row specimen: 宋体 / 正经 ("我还在改。" at 28px Song), 楷体 / 心虚 (same at 28px Kai in red), 等宽 / 记账 ("PROOF 001 · 2026.11" at 13px mono). Labels are 11px mono, rows 1px dotted.
+- **Placement:** after the colophon grid, before the footer; always visible, including in 清样; rows stack below 560px.
+- **Purpose:** closes the page by showing its three voices in the same sentence.
 
 ### Reading Line
 - **Desktop:** a 1px fixed red line at the binding edge, beginning under the 60px running head and growing with scroll progress. A faint 1px structural rule marks the same x-position in the sheet. It is a reading instrument, not a border.
