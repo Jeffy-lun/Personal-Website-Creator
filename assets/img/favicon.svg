@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#f0ebdf"/>
+  <rect x="8.5" y="8.5" width="47" height="47" fill="none" stroke="#b02a1e" stroke-width="2"/>
+  <text x="32" y="44" text-anchor="middle" font-family="Songti SC, Noto Serif SC, serif" font-size="34" font-weight="700" fill="#b02a1e">孟</text>
+</svg>

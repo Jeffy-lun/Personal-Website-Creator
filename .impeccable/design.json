@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T06:55:04Z",
+  "title": "Design System: 孟祥博 · 个人校样",
+  "extensions": {
+    "colorMeta": {
+      "proof-paper": {
+        "role": "neutral",
+        "displayName": "Proof Paper",
+        "canonical": "#f0ebdf",
+        "tonalRamp": [
+          "#2b2821",
+          "#514b3e",
+          "#756c57",
+          "#988d71",
+          "#b1a995",
+          "#cbc5b9",
+          "#e0ddd6",
+          "#f4f3f1"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Proof Ink",
+        "canonical": "#17140f",
+        "tonalRamp": [
+          "#282725",
+          "#4a4844",
+          "#6b6761",
+          "#8b867f",
+          "#a8a49f",
+          "#c5c2bf",
+          "#dddcda",
+          "#f3f2f2"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#5b5346",
+        "tonalRamp": [
+          "#292724",
+          "#4c4942",
+          "#6e685e",
+          "#8e877b",
+          "#aaa59c",
+          "#c6c3bd",
+          "#dedcd9",
+          "#f3f2f1"
+        ]
+      },
+      "muted-annotation": {
+        "role": "neutral",
+        "displayName": "Muted Annotation",
+        "canonical": "#6b6254",
+        "tonalRamp": [
+          "#292724",
+          "#4c4842",
+          "#6e685e",
+          "#8e877b",
+          "#aaa59c",
+          "#c6c3bd",
+          "#dedcd9",
+          "#f3f2f1"
+        ]
+      },
+      "correction-red": {
+        "role": "primary",
+        "displayName": "Correction Red",
+        "canonical": "#b02a1e",
+        "tonalRamp": [
+          "#361916",
+          "#672d27",
+          "#973d35",
+          "#c35046",
+          "#d17d76",
+          "#deaaa5",
+          "#ebcecc",
+          "#f8eeed"
+        ]
+      },
+      "pencil-blue": {
+        "role": "secondary",
+        "displayName": "Pencil Blue",
+        "canonical": "#2b4d7a",
+        "tonalRamp": [
+          "#192433",
+          "#2e4461",
+          "#3e608e",
+          "#527eb7",
+          "#7e9ec8",
+          "#abbfd9",
+          "#cfdae8",
+          "#eef2f7"
+        ]
+      },
+      "print-black": {
+        "role": "neutral",
+        "displayName": "Print Black",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "#262626",
+          "#474747",
+          "#666666",
+          "#858585",
+          "#a3a3a3",
+          "#c2c2c2",
+          "#dbdbdb",
+          "#f2f2f2"
+        ]
+      },
+      "print-white": {
+        "role": "neutral",
+        "displayName": "Print White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#474747",
+          "#666666",
+          "#858585",
+          "#a3a3a3",
+          "#c2c2c2",
+          "#dbdbdb",
+          "#f2f2f2"
+        ]
+      },
+      "print-rule": {
+        "role": "neutral",
+        "displayName": "Print Rule",
+        "canonical": "#999999",
+        "tonalRamp": [
+          "#262626",
+          "#474747",
+          "#666666",
+          "#858585",
+          "#a3a3a3",
+          "#c2c2c2",
+          "#dbdbdb",
+          "#f2f2f2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Name",
+        "purpose": "The vertical 孟祥博 hero name only."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "The one-sentence thesis in the first viewport."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles 摘要 through 来信."
+      },
+      "subhead": {
+        "displayName": "Row Title",
+        "purpose": "Draft rows and note titles."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "One-sentence section introductions."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All long-form Chinese prose and lists."
+      },
+      "annotation": {
+        "displayName": "Annotation",
+        "purpose": "Handwritten margin notes, inserts and signatures only."
+      },
+      "ui": {
+        "displayName": "Interface",
+        "purpose": "Tabs and note tags."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "11px mono proof slugs, folios and metadata."
+      },
+      "contact": {
+        "displayName": "Contact",
+        "purpose": "The large red GitHub link."
+      },
+      "stamp": {
+        "displayName": "Stamp",
+        "purpose": "未定稿 / 清样 rubber stamps."
+      },
+      "seal": {
+        "displayName": "Seal",
+        "purpose": "The 阅 stamp and other large seals."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "two-frame step",
+        "value": "steps(2, end)",
+        "purpose": "Every state change lands in two frames; nothing eases or fades."
+      },
+      {
+        "name": "stamp landing",
+        "value": "380ms steps(2, end) 280ms one-shot",
+        "purpose": "The 未定稿 stamp is pressed onto the sheet once, then stays."
+      },
+      {
+        "name": "reading line",
+        "value": "140ms linear",
+        "purpose": "The fixed red proof line follows scroll without a spring."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "560px"
+      },
+      {
+        "name": "stack",
+        "value": "900px"
+      },
+      {
+        "name": "mid",
+        "value": "980px"
+      },
+      {
+        "name": "notes-stack",
+        "value": "1180px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Proof Toggle",
+      "kind": "button",
+      "refersTo": "proof-toggle",
+      "description": "Switches between the clean proof and the marked proof; the checkbox fills in marked mode.",
+      "html": "<button class=\"ds-proof-toggle\" aria-pressed=\"true\"><span class=\"ds-proof-toggle__box\" aria-hidden=\"true\"></span><span>看清样</span></button>",
+      "css": ".ds-proof-toggle{display:inline-flex;align-items:center;gap:9px;height:30px;padding:0 11px;border:1px solid #17140f;background:transparent;color:#17140f;font-family:\"Noto Serif SC\",\"Songti SC\",serif;font-size:12px;letter-spacing:.04em;cursor:pointer}.ds-proof-toggle__box{position:relative;width:10px;height:10px;border:1px solid #b02a1e;flex:none}.ds-proof-toggle[aria-pressed=\"true\"] .ds-proof-toggle__box::before{content:\"\";position:absolute;inset:1px;background:#b02a1e}.ds-proof-toggle:hover{color:#b02a1e;border-color:#b02a1e}"
+    },
+    {
+      "name": "Fore-edge Tab",
+      "kind": "nav",
+      "refersTo": "tab-link",
+      "description": "Vertical reading-index tab; the active tab is red and gains a 2px fore-edge rule.",
+      "html": "<a class=\"ds-tab\" href=\"#\" aria-current=\"true\"><span class=\"ds-tab__no\">04</span><span>批注</span></a>",
+      "css": ".ds-tab{display:flex;align-items:center;justify-content:flex-end;gap:7px;height:52px;padding:4px 6px;border-right:1px solid rgba(23,20,15,.19);color:#6b6254;font-family:\"Noto Serif SC\",\"Songti SC\",serif;font-size:12px;line-height:1;letter-spacing:.04em;text-decoration:none;writing-mode:vertical-rl;text-orientation:upright}.ds-tab__no{font-family:\"IBM Plex Mono\",monospace;font-size:11px;color:#6b6254}.ds-tab[aria-current=\"true\"]{color:#b02a1e;border-right:2px solid #b02a1e}.ds-tab:hover{color:#b02a1e;border-color:#b02a1e}"
+    },
+    {
+      "name": "Margin Note",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "A red handwritten note with a square proof tag; a hairline connects it to the binding margin.",
+      "html": "<aside class=\"ds-note\"><span class=\"ds-note__tag\">问</span><p>改到什么时候？<br>不知道。先改着。</p></aside>",
+      "css": ".ds-note{display:grid;grid-template-columns:22px minmax(0,1fr);gap:9px;padding-left:18px;border-left:1px solid rgba(176,42,30,.32);color:#b02a1e;font-family:\"WenKai\",\"Noto Serif SC\",\"Kaiti SC\",cursive;font-size:16px;line-height:1.68}.ds-note p{margin:0;transform:rotate(-.3deg)}.ds-note__tag{display:inline-grid;place-items:center;width:22px;height:22px;border:1px solid currentColor;font-family:\"Noto Serif SC\",\"Songti SC\",serif;font-size:12px;line-height:1;transform:rotate(-2deg)}"
+    },
+    {
+      "name": "Rubber Stamp",
+      "kind": "custom",
+      "refersTo": "stamp",
+      "description": "A double-ruled red stamp, rotated and multiplied onto the paper; used once per view.",
+      "html": "<span class=\"ds-stamp\">未定稿</span>",
+      "css": ".ds-stamp{display:inline-block;padding:9px 12px;border:2px solid #b02a1e;outline:1px solid #b02a1e;outline-offset:3px;color:#b02a1e;font-family:\"Noto Serif SC\",\"Songti SC\",serif;font-size:19px;font-weight:600;line-height:1;letter-spacing:.3em;text-indent:.3em;opacity:.84;mix-blend-mode:multiply;transform:rotate(-7deg);white-space:nowrap}"
+    },
+    {
+      "name": "Draft Row",
+      "kind": "custom",
+      "refersTo": "draft-row",
+      "description": "A work index row: title and status over a mono meta line and a right-aligned description; a 1px rule replaces a card.",
+      "html": "<a class=\"ds-draft\" href=\"#\"><span class=\"ds-draft__title\">本页</span><span class=\"ds-draft__status\">校样中</span><span class=\"ds-draft__meta\">网站 · 2026</span><span class=\"ds-draft__desc\">你正在读的这份东西。↗</span></a>",
+      "css": ".ds-draft{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;gap:6px 24px;padding:24px 0;border-top:1px solid rgba(23,20,15,.19);color:#17140f;text-decoration:none;font-family:\"Noto Serif SC\",\"Songti SC\",serif}.ds-draft__title{grid-column:1;grid-row:1;font-size:28px;font-weight:600;line-height:1.3;letter-spacing:.02em}.ds-draft__status{grid-column:2;grid-row:1;justify-self:end;color:#b02a1e;font-family:\"WenKai\",\"Kaiti SC\",cursive;font-size:14px}.ds-draft__meta{grid-column:1;grid-row:2;color:#6b6254;font-family:\"IBM Plex Mono\",monospace;font-size:11px;letter-spacing:.16em}.ds-draft__desc{grid-column:2;grid-row:2;justify-self:end;color:#5b5346;font-size:15px;text-align:right}.ds-draft:hover{background:rgba(176,42,30,.035)}.ds-draft:hover .ds-draft__title{color:#b02a1e;text-decoration:underline;text-decoration-color:#b02a1e;text-underline-offset:7px}"
+    },
+    {
+      "name": "Contact Link",
+      "kind": "custom",
+      "refersTo": "contact-link",
+      "description": "The single large red call to action; a 1px red rule under the words, ink on hover.",
+      "html": "<a class=\"ds-contact\" href=\"#\">来 GitHub 找我<span aria-hidden=\"true\">↗</span></a>",
+      "css": ".ds-contact{display:inline-flex;align-items:baseline;gap:14px;padding-bottom:6px;border-bottom:1px solid #b02a1e;color:#b02a1e;font-family:\"Noto Serif SC\",\"Songti SC\",serif;font-size:clamp(34px,5vw,64px);font-weight:600;line-height:1.15;letter-spacing:.02em;text-decoration:none;transition:color .12s steps(2,end),border-color .12s steps(2,end)}.ds-contact:hover{color:#17140f;border-color:#17140f}.ds-contact span{font-size:.55em;line-height:1}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Author's Proof",
+    "overview": "A single warm sheet of paper, set in Song, corrected in red. The page presents its owner as a text still being edited: a printed statement, a handwritten margin that admits the honest version, and a stamp that refuses to call the draft finished. It is not a portfolio grid and not a résumé; it is a one-person publication whose form is the argument.",
+    "keyCharacteristics": [
+      "Warm proof paper, near-black ink, correction red and pencil blue as the only chroma.",
+      "A printed Song voice, a handwritten Kai voice, and a mono slug line; never more.",
+      "One continuous sheet with a binding rail, folios, crop marks, and a fore-edge tab index.",
+      "The 校样/清样 toggle: the same page with the annotations turned off.",
+      "Flat, square, rule-led; no cards, no shadows, no gradients.",
+      "Motion in two-frame steps; one stamp lands, one line grows."
+    ],
+    "rules": [
+      {
+        "name": "The Red Pen Rule",
+        "body": "Red is correction ink, never a filled surface. It belongs to marks, rules, stamps, the reading line, and the contact link. Blue is the second pass: paused work, the clean stamp.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Song sets the printed statement; Kai is only for the margin, inserts, and signature. Mono is only for slugs and measurements. Body copy is never set in Kai.",
+        "section": "typography"
+      },
+      {
+        "name": "The Binding Rule",
+        "body": "The left binding rail carries folios and proof metadata; the fore-edge carries the tab index. Content never crosses the binding line.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Sheet Rule",
+        "body": "No box shadows. Depth comes from layers of paper and ink: the fixed reading line, the annotation leaf, hairline rules, and the stamp.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Two-Frame Rule",
+        "body": "State changes step in two frames. The stamp lands once; the reading line grows linearly. No scroll reveals, no decorative fades.",
+        "section": "motion"
+      }
+    ],
+    "dos": [
+      "Do keep the sheet asymmetric: binding margin left, fore-edge tabs right.",
+      "Do keep functional text at 11px or larger; body at 17–19px with 1.88–1.95 line height.",
+      "Do keep the prose measure around 30–34 Chinese characters (about 65–75ch).",
+      "Do preserve the marked/clean toggle and the no-JavaScript marked fallback.",
+      "Do use one stamp per view; its rarity is the mark."
+    ],
+    "donts": [
+      "Don't wrap sections in cards, rounded rectangles, or soft-shadow panels.",
+      "Don't use gradients, glass, blur, or colored background fills.",
+      "Don't set body copy in Kai or use mono as a costume for prose.",
+      "Don't add a centered avatar hero, a kicker above headings, or a row of equal project cards.",
+      "Don't add scroll-reveal animations or more than one accent at a time."
+    ]
+  }
+}
